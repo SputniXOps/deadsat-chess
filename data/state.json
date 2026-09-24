@@ -1,0 +1,5 @@
+{
+ "note": "Project phase for the dashboard. listening: no link, sessions are receive-only. Later phases are not built yet.",
+ "phase": "listening",
+ "target": "20442"
+}

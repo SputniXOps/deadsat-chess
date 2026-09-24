@@ -1,0 +1,69 @@
+/* DeadSat Atlas — design tokens. One theme: black. */
+:root {
+  --ds-surface-000: #000000;
+  --ds-surface-100: #050505;
+  --ds-surface-200: #0a0a0a;
+  --ds-surface-300: #101010;
+  --ds-surface-400: #181818;
+  --ds-surface-inset: #000000;
+  --ds-surface-overlay: #0b0b0b;
+  --ds-line-100: #161616;
+  --ds-line-200: #222222;
+  --ds-line-300: #464646;
+  --ds-grid-plot: #121212;
+  --ds-ink-100: #e8e8e8;
+  --ds-ink-200: #a6a6a6;
+  --ds-ink-300: #6b6b6b;
+  --ds-ink-inverse: #000000;
+  --ds-accent-ion: #86b9c8;
+  --ds-accent-ion-dim: #0e1c21;
+  --ds-accent-beacon: #d6a24e;
+  --ds-accent-beacon-dim: #2a1f0c;
+  --ds-focus-ring: #86b9c8;
+  --ds-status-operational: #6fbf8e;
+  --ds-status-partial: #cbb35a;
+  --ds-status-dormant: #8f9aa8;
+  --ds-status-unattended: #cf8a5a;
+  --ds-status-graveyard: #7ea6a3;
+  --ds-status-reentered: #9e93b8;
+  --ds-status-unknown: #6b6b6b;
+  --ds-orbit-leo: #6fb3c6;
+  --ds-orbit-meo: #8d94d6;
+  --ds-orbit-geo: #cfa255;
+  --ds-orbit-heo: #b48ac2;
+  --ds-orbit-graveyard: #8a949c;
+  --ds-orbit-decaying: #cf7a58;
+  --ds-rf-passive: #d6a24e;
+  --ds-rf-documented: #7fa9c9;
+  --ds-rf-quiet: #6b6b6b;
+  --ds-shadow-popover: 0 12px 28px rgba(0, 0, 0, 0.8);
+
+  /* the one place with colour: the board */
+  --ds-chess-bg: #061109;
+  --ds-chess-panel: #08170c;
+  --ds-chess-dark: #0c2c13;
+  --ds-chess-light-a: #1c7a2c;
+  --ds-chess-light-b: #145c21;
+  --ds-chess-piece: #8dff9c;
+  --ds-chess-ink: #66e87a;
+  --ds-chess-dim: #2f8a3f;
+  --ds-chess-line: #1b4f25;
+
+  --ds-space-2: 2px; --ds-space-4: 4px; --ds-space-6: 6px; --ds-space-8: 8px; --ds-space-12: 12px;
+  --ds-space-16: 16px; --ds-space-20: 20px; --ds-space-24: 24px; --ds-space-32: 32px; --ds-space-48: 48px;
+  --ds-radius-2: 2px; --ds-radius-3: 3px;
+  --ds-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.display { font-family: var(--ds-font-sans); font-size: 28px; line-height: 32px; font-weight: 600; letter-spacing: -0.02em; }
+.display-sm { font-family: var(--ds-font-sans); font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.title { font-family: var(--ds-font-sans); font-size: 15px; line-height: 20px; font-weight: 600; }
+.subtitle { font-family: var(--ds-font-sans); font-size: 13px; line-height: 18px; font-weight: 600; }
+.body { font-family: var(--ds-font-sans); font-size: 13px; line-height: 19px; font-weight: 400; }
+.body-sm { font-family: var(--ds-font-sans); font-size: 12px; line-height: 17px; font-weight: 400; }
+.micro { font-family: var(--ds-font-sans); font-size: 11px; line-height: 15px; font-weight: 500; }
+.label { font-family: var(--ds-font-sans); font-size: 10px; line-height: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.data-xl { font-family: var(--ds-font-mono); font-size: 26px; line-height: 30px; font-weight: 500; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.data { font-family: var(--ds-font-mono); font-size: 12px; line-height: 16px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.data-sm { font-family: var(--ds-font-mono); font-size: 11px; line-height: 14px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.ident { font-family: var(--ds-font-mono); font-size: 11px; line-height: 14px; font-weight: 500; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }

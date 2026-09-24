@@ -1,0 +1,403 @@
+{
+  "note": "Catalogue metadata for DeadSat Atlas. Names, NORAD and COSPAR identifiers are public record. Status, RF history and 'last report' fields are compiled from public reports and are incomplete; treat them as research notes, not as authoritative status. Orbital elements live in tle.json (fetched from public sources by scripts/fetch_tle.py).",
+  "observer": { "id": "EU-01", "grid": "JO70", "lat": 50.5, "lon": 15.0, "alt_m": 300, "note": "position rounded to the grid square" },
+  "recentSince": "2020-01-01",
+  "objects": [
+    {
+      "id": "20442", "name": "LO-19", "alt": ["LUSAT", "OSCAR 19"], "cospar": "1990-005G",
+      "country": "Argentina", "cc": "AR", "operator": "AMSAT-LU", "mission": "Amateur store-and-forward (Microsat bus)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-01-22", "retired": "2003",
+      "bands": ["VHF", "UHF"],
+      "tx": [
+        { "f": 437.125, "mode": "CW → carrier", "desc": "telemetry beacon; today a continuous carrier, sunlit only", "alive": true },
+        { "f": 437.153, "mode": "BPSK 1200", "desc": "PACSAT downlink (historical)", "alive": false }
+      ],
+      "rf": { "historical": true, "lastHeard": "2023-01", "lastBy": "DK3WN", "lastNote": "strong continuous carrier ±Doppler, only when illuminated" },
+      "watch": true,
+      "candidate": { "rank": 1, "why": [
+        "onboard computer (NEC V40, 256 KB EDAC RAM) was designed to be reloaded from the ground — flight software went up over the air, routinely",
+        "served as the official test bed for AO-16 software builds before they were loaded on AO-16",
+        "transmitter and power bus are demonstrably alive: continuous carrier still reported on 437.125 MHz when sunlit",
+        "regularly above EU-01: sun-synchronous, ~100 min period, several usable passes per day",
+        "any uplink would need AMSAT-LU authorization — the only version of this that is worth doing"
+      ] },
+      "computer": "NEC V40 · 256 KB RAM with EDAC · 2 KB ROM boot loader (MBL) · Quadron multitasking OS",
+      "notes": "Store-and-forward BBS ceased around 2003. The computer has not answered since; the RF side never stopped. Same bus as AO-16, DO-17, WO-18.",
+      "sources": ["SatNOGS DB", "AMSAT-SE 2020", "DK3WN 2023", "USU Microsat paper (1990)", "om3ktr"]
+    },
+    {
+      "id": "20441", "name": "WO-18", "alt": ["WEBERSAT", "OSCAR 18"], "cospar": "1990-005F",
+      "country": "United States", "cc": "US", "operator": "Weber State University", "mission": "Amateur imaging / experiments (Microsat bus)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-01-22", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [
+        { "f": 437.102, "mode": "BPSK 1200", "desc": "primary downlink (historical)", "alive": false },
+        { "f": 437.075, "mode": "BPSK 1200", "desc": "secondary downlink (historical)", "alive": false }
+      ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "no public reception report found; not tracked in SatNOGS DB" },
+      "watch": true,
+      "candidate": { "rank": 2, "why": [
+        "last public status: 'in MBL mode after a software crash' — the boot loader is the only thing running, waiting for a reload",
+        "same V40 / Quadron bus as LO-19 and AO-16, so the same reload path applies",
+        "no one has reported hearing it in years: power state unknown, which is the whole problem",
+        "elements in the public catalogue are stale — nobody is looking at it"
+      ] },
+      "computer": "NEC V40 · 256 KB RAM with EDAC · 2 KB ROM boot loader (MBL) · Quadron multitasking OS",
+      "notes": "Carried a CCD camera and a spectrometer. The interesting part is not the payload, it is the state the computer was left in.",
+      "sources": ["om3ktr", "USU Microsat paper (1990)", "Wikipedia OSCAR list"]
+    },
+    {
+      "id": "20439", "name": "AO-16", "alt": ["PACSAT", "OSCAR 16"], "cospar": "1990-005D",
+      "country": "United States", "cc": "US", "operator": "AMSAT-NA", "mission": "Amateur store-and-forward (Microsat bus)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-01-22", "retired": "2008",
+      "bands": ["VHF", "UHF", "S"],
+      "tx": [
+        { "f": 437.026, "mode": "BPSK 1200 / USB voice", "desc": "primary downlink; used as an analog repeater in 2008", "alive": null },
+        { "f": 437.051, "mode": "BPSK 1200", "desc": "secondary downlink (historical)", "alive": false },
+        { "f": 2401.1428, "mode": "FM", "desc": "S-band beacon (historical)", "alive": false }
+      ],
+      "rf": { "historical": true, "lastHeard": "2008", "lastBy": "AMSAT-NA command team", "lastNote": "operated as FM-up / USB-down voice repeater after the computer died; later listed as ceased" },
+      "watch": true,
+      "candidate": { "rank": 3, "why": [
+        "the best-documented PACSAT: 10 MB RAM disk, full protocol suite published (PBP, FTL0, file headers)",
+        "the 2007 attempt to reload its operating system from the ground failed — and was documented, which tells us exactly what breaks",
+        "radio side kept working after the computer stopped: it ran as a plain repeater in 2008",
+        "no recent reception report; the transmitter may be off or the bus may be in an undocumented state"
+      ] },
+      "computer": "NEC V40 · 256 KB RAM with EDAC · 10 MB RAM disk · Quadron multitasking OS",
+      "notes": "Command team (NK6K, WD0E, WB9ANQ, N8MH) turned it back on in November 2007 and tried to reload the OS. It did not take.",
+      "sources": ["amsat-bb Dec 2007", "KG8OC status list 2008", "SatNOGS DB", "Wikipedia"]
+    },
+    {
+      "id": "20440", "name": "DO-17", "alt": ["DOVE", "OSCAR 17"], "cospar": "1990-005E",
+      "country": "Brazil", "cc": "BR", "operator": "BRAMSAT", "mission": "Amateur voice / telemetry (Microsat bus)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-01-22", "retired": "1998-03",
+      "bands": ["VHF", "S"],
+      "tx": [
+        { "f": 145.825, "mode": "FM AFSK 1200", "desc": "telemetry / Digitalker voice (historical)", "alive": false },
+        { "f": 2401.220, "mode": "FM", "desc": "S-band beacon (historical)", "alive": false }
+      ],
+      "rf": { "historical": true, "lastHeard": "1998-03", "lastBy": null, "lastNote": "stopped transmitting in March 1998; did not respond to ground control afterwards" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["same bus as LO-19, but silent since 1998 and unresponsive to its own command station — lowest odds of the four Microsats"] },
+      "computer": "NEC V40 · 256 KB RAM with EDAC · Quadron multitasking OS · Digitalker speech synthesizer",
+      "notes": null,
+      "sources": ["om3ktr", "Wikipedia"]
+    },
+    {
+      "id": "14781", "name": "UO-11", "alt": ["UoSAT-2", "OSCAR 11"], "cospar": "1984-021B",
+      "country": "United Kingdom", "cc": "GB", "operator": "University of Surrey", "mission": "Experimental amateur / educational",
+      "status": "Partially Operational", "orbit": "LEO", "launch": "1984-03-01", "retired": null,
+      "bands": ["VHF", "UHF", "S"],
+      "tx": [
+        { "f": 145.826, "mode": "FM AFSK 1200 ASCII", "desc": "telemetry beacon — still decodable", "alive": true },
+        { "f": 435.025, "mode": "AFSK 1200 / PSK 4800", "desc": "UHF beacon (inactive)", "alive": false },
+        { "f": 2401.5, "mode": "FM", "desc": "S-band beacon (inactive)", "alive": false }
+      ],
+      "rf": { "historical": true, "lastHeard": "2026-03", "lastBy": "DK3WN", "lastNote": "ASCII telemetry frames decoded 41 years after launch; ~10.35-day watchdog on/off cycle, solar only" },
+      "watch": true,
+      "candidate": { "rank": null, "why": ["alive, monitored and still owned — this is the one to listen to, not the one to talk to"] },
+      "computer": "RCA COSMAC 1802 · flight software in Forth · Digitalker speech synthesizer",
+      "notes": "First satellite with a store-and-forward messaging system. No usable battery since 2008: it wakes with the sun and goes quiet with it.",
+      "sources": ["AMSAT-UK", "AMSAT", "DK3WN 2026", "SatNOGS DB"]
+    },
+    {
+      "id": "22826", "name": "IO-26", "alt": ["ITAMSAT", "OSCAR 26"], "cospar": "1993-061D",
+      "country": "Italy", "cc": "IT", "operator": "AMSAT Italia", "mission": "Amateur store-and-forward (Microsat-class bus)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1993-09-26", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.822, "mode": "BPSK 1200", "desc": "PACSAT downlink (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "listed as ceased; still tracked in SatNOGS DB" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["Microsat-class bus built in Italy; ceased operations, no recent reports"] },
+      "computer": "V40-class Microsat bus",
+      "notes": null,
+      "sources": ["Gunter's Space Page", "SatNOGS DB"]
+    },
+    {
+      "id": "22825", "name": "AO-27", "alt": ["EYESAT-A", "OSCAR 27"], "cospar": "1993-061C",
+      "country": "United States", "cc": "US", "operator": "AMRAD", "mission": "Amateur FM repeater / experiments",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1993-09-26", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 436.795, "mode": "FM", "desc": "repeater downlink (intermittent in later years)", "alive": null } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "intermittent operation in the 2010s; current state unverified" },
+      "watch": false, "candidate": null,
+      "computer": null, "notes": null,
+      "sources": ["SatNOGS DB", "AMSAT"]
+    },
+    {
+      "id": "21575", "name": "UO-22", "alt": ["UoSAT-5", "OSCAR 22"], "cospar": "1991-050B",
+      "country": "United Kingdom", "cc": "GB", "operator": "University of Surrey", "mission": "Amateur 9600 bps store-and-forward, CCD imaging",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1991-07-17", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.120, "mode": "FSK 9600 (G3RUH)", "desc": "PACSAT downlink, callsigns UOSAT5-11 / UOSAT5-12 (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "ceased; not tracked in SatNOGS DB" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["9600 bps PACSAT with 512 KB of memory and a CCD camera; flight software was uploaded from Surrey — but nothing has been heard for years"] },
+      "computer": "Surrey OBC · 512 KB memory · PACSAT protocol suite at 9600 bps",
+      "notes": null,
+      "sources": ["om3ktr", "Wikipedia"]
+    },
+    {
+      "id": "22077", "name": "KO-23", "alt": ["KITSAT-1", "OSCAR 23"], "cospar": "1992-052B",
+      "country": "South Korea", "cc": "KR", "operator": "KAIST SaTReC", "mission": "Amateur store-and-forward, imaging",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1992-08-10", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.175, "mode": "FSK 9600 (G3RUH)", "desc": "PACSAT downlink (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "contact maintained for about 12 years; ceased" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["two onboard computers (OBC186 main, OBC80 backup); ceased, no recent reports"] },
+      "computer": "OBC186 (main) · OBC80 (backup)",
+      "notes": null,
+      "sources": ["Wikipedia", "SaTReC"]
+    },
+    {
+      "id": "22828", "name": "KO-25", "alt": ["KITSAT-2", "OSCAR 25"], "cospar": "1993-061F",
+      "country": "South Korea", "cc": "KR", "operator": "KAIST SaTReC", "mission": "Amateur store-and-forward, imaging",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1993-09-26", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 436.500, "mode": "FSK 9600 (G3RUH)", "desc": "PACSAT downlink (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "ceased" },
+      "watch": false, "candidate": null,
+      "computer": "OBC186-class", "notes": null,
+      "sources": ["Wikipedia"]
+    },
+    {
+      "id": "20437", "name": "UO-14", "alt": ["UoSAT-3", "OSCAR 14"], "cospar": "1990-005B",
+      "country": "United Kingdom", "cc": "GB", "operator": "University of Surrey", "mission": "Amateur store-and-forward, later FM repeater",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-01-22", "retired": "2003",
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.070, "mode": "FM", "desc": "repeater downlink (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": "2003", "lastBy": null, "lastNote": "ceased 2003" },
+      "watch": false, "candidate": null,
+      "computer": "Surrey OBC", "notes": null,
+      "sources": ["Wikipedia"]
+    },
+    {
+      "id": "20480", "name": "FO-20", "alt": ["JAS-1b", "Fuji-OSCAR 20"], "cospar": "1990-013C",
+      "country": "Japan", "cc": "JP", "operator": "JARL / JAMSAT", "mission": "Amateur linear transponder + digital (JD)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1990-02-07", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.795, "mode": "CW / SSB", "desc": "beacon and transponder (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "ceased" },
+      "watch": false, "candidate": null,
+      "computer": "JAS-series OBC", "notes": null,
+      "sources": ["Wikipedia", "JAMSAT"]
+    },
+    {
+      "id": "24278", "name": "FO-29", "alt": ["JAS-2", "Fuji-OSCAR 29"], "cospar": "1996-046B",
+      "country": "Japan", "cc": "JP", "operator": "JARL / JAMSAT", "mission": "Amateur linear transponder + digital (JD)",
+      "status": "Partially Operational", "orbit": "LEO", "launch": "1996-08-17", "retired": null,
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 435.795, "mode": "CW", "desc": "beacon; transponder switched on when power allows", "alive": true } ],
+      "rf": { "historical": true, "lastHeard": "2024", "lastBy": "amateur reports", "lastNote": "transponder scheduled intermittently by JAMSAT" },
+      "watch": false, "candidate": null,
+      "computer": null, "notes": null,
+      "sources": ["JAMSAT", "SatNOGS DB"]
+    },
+    {
+      "id": "7530", "name": "AO-7", "alt": ["AMSAT-OSCAR 7"], "cospar": "1974-089B",
+      "country": "United States", "cc": "US", "operator": "AMSAT-NA", "mission": "Amateur linear transponders (Mode A / Mode B)",
+      "status": "Partially Operational", "orbit": "LEO", "launch": "1974-11-15", "retired": "1981",
+      "bands": ["HF", "VHF", "UHF", "S"],
+      "tx": [
+        { "f": 145.9775, "mode": "CW", "desc": "Mode B telemetry beacon", "alive": true },
+        { "f": 435.100, "mode": "CW", "desc": "Mode U telemetry beacon", "alive": true },
+        { "f": 29.502, "mode": "CW", "desc": "Mode A telemetry beacon", "alive": true }
+      ],
+      "rf": { "historical": true, "lastHeard": "2026", "lastBy": "SatNOGS network", "lastNote": "in daily use; solar only, alternates modes every 24 h, silent in eclipse" },
+      "watch": true,
+      "candidate": { "rank": null, "why": ["the famous one: battery short in 1981, heard again 21 June 2002 by G3IOR. No computer to speak of — an analog transponder that refuses to die"] },
+      "computer": null,
+      "notes": "Oldest operational amateur satellite. Not a candidate for anything except listening.",
+      "sources": ["AMSAT", "SatNOGS DB"]
+    },
+    {
+      "id": "14129", "name": "AO-10", "alt": ["Phase 3B", "OSCAR 10"], "cospar": "1983-058B",
+      "country": "Germany", "cc": "DE", "operator": "AMSAT-DL", "mission": "Amateur high-orbit transponder",
+      "status": "Non-operational", "orbit": "HEO", "launch": "1983-06-16", "retired": "1986",
+      "bands": ["VHF", "UHF"],
+      "tx": [ { "f": 145.810, "mode": "CW", "desc": "general beacon (historical, sporadic)", "alive": null } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "IHU damaged by radiation in 1986; sporadic beacon reports in later years, current state unverified" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["1802-based IHU with radiation-damaged memory — the computer is the failed part"] },
+      "computer": "IHU (RCA 1802) · IPS interpreter",
+      "notes": null,
+      "sources": ["AMSAT-DL", "SatNOGS DB"]
+    },
+    {
+      "id": "26609", "name": "AO-40", "alt": ["Phase 3D", "OSCAR 40"], "cospar": "2000-072B",
+      "country": "Germany", "cc": "DE", "operator": "AMSAT-DL / AMSAT-NA", "mission": "Amateur high-orbit multi-band transponder",
+      "status": "Non-operational", "orbit": "HEO", "launch": "2000-11-16", "retired": "2004-01",
+      "bands": ["VHF", "UHF", "L", "S", "C", "X", "K"],
+      "tx": [ { "f": 2401.323, "mode": "PSK 400", "desc": "S-band telemetry beacon (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": "2004", "lastBy": "AMSAT command team", "lastNote": "battery failure January 2004; no confirmed signal since" },
+      "watch": false,
+      "candidate": { "rank": null, "why": ["two IHUs (1802 + Atmel), most capable amateur bus ever flown — and dead since a battery cell shorted in 2004"] },
+      "computer": "IHU-1 (RCA 1802, IPS) · IHU-2 (Atmel)",
+      "notes": null,
+      "sources": ["AMSAT-DL", "SatNOGS DB"]
+    },
+    {
+      "id": "23439", "name": "RS-15", "alt": ["RADIO ROSTO"], "cospar": "1994-085A",
+      "country": "Russia", "cc": "RU", "operator": "ROSTO", "mission": "Amateur linear transponder (Mode A)",
+      "status": "Non-operational", "orbit": "LEO", "launch": "1994-12-26", "retired": null,
+      "bands": ["HF", "VHF"],
+      "tx": [ { "f": 29.3525, "mode": "CW", "desc": "beacon (sporadic reports)", "alive": null } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "sporadic beacon reports over the years; current state unverified" },
+      "watch": false, "candidate": null,
+      "computer": null, "notes": null,
+      "sources": ["SatNOGS DB"]
+    },
+    {
+      "id": "1002", "name": "LES-1", "alt": ["LES 1"], "cospar": "1965-008C",
+      "country": "United States", "cc": "US", "operator": "MIT Lincoln Laboratory", "mission": "Military UHF communications experiment",
+      "status": "Abandoned", "orbit": "MEO", "launch": "1965-02-11", "retired": "1967",
+      "bands": ["UHF"],
+      "tx": [ { "f": 237.0, "mode": "carrier / modulated", "desc": "UHF signal, modulated by a ~4 s tumble", "alive": true } ],
+      "rf": { "historical": true, "lastHeard": "2024", "lastBy": "amateur reports (first: G3YPQ 2013)", "lastNote": "rediscovered 2013 near 237 MHz; tumbling end over end every 4 s; solar panels partly shadowed by its own engine" },
+      "watch": true,
+      "candidate": { "rank": null, "why": ["a 1965 relay with no computer at all. It is on the list because it is the cleanest example of 'dead' being a status, not a fact"] },
+      "computer": null,
+      "notes": "Stuck in its transfer orbit after a wiring error; considered dead in 1967.",
+      "sources": ["RSGB 2013", "SatNOGS DB"]
+    },
+    {
+      "id": "965", "name": "TRANSIT 5B-5", "alt": ["OPS 6582"], "cospar": "1964-083D",
+      "country": "United States", "cc": "US", "operator": "US Navy", "mission": "Navigation (Transit)",
+      "status": "Abandoned", "orbit": "LEO", "launch": "1964-12-13", "retired": null,
+      "bands": ["VHF"],
+      "tx": [ { "f": 136.65, "mode": "modulated telemetry", "desc": "still broadcasts modulated telemetry when sunlit", "alive": true } ],
+      "rf": { "historical": true, "lastHeard": "2024-12", "lastBy": "dereksgc / RTL-SDR.com", "lastNote": "the oldest satellite still transmitting; RTG powered originally, now solar" },
+      "watch": true,
+      "candidate": { "rank": null, "why": ["oldest object still on the air. No computer, no interest beyond the fact that it exists"] },
+      "computer": null, "notes": null,
+      "sources": ["RTL-SDR.com 2024", "sigidwiki", "SatNOGS DB"]
+    },
+    {
+      "id": "26113", "name": "IMAGE", "alt": ["Explorer 78"], "cospar": "2000-017A",
+      "country": "United States", "cc": "US", "operator": "NASA", "mission": "Magnetospheric imaging",
+      "status": "Lost Contact", "orbit": "HEO", "launch": "2000-03-25", "retired": "2005-12",
+      "bands": ["S"],
+      "tx": [ { "f": 2272.5, "mode": "PCM", "desc": "S-band telemetry (found 2018, silent again since Aug 2018)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": "2018-08", "lastBy": "Scott Tilley / NASA", "lastNote": "found 20 Jan 2018 by an amateur scanning S-band; confirmed by NASA; lost again 25 Feb and 28 Aug 2018" },
+      "watch": true,
+      "candidate": { "rank": null, "why": ["proof that a 'dead' spacecraft can come back on its own when the power system resets — and that an amateur can be the one who notices"] },
+      "computer": "RAD6000 flight computer",
+      "notes": null,
+      "sources": ["NASA", "Wikipedia"]
+    },
+    {
+      "id": "3029", "name": "ATS-3", "alt": ["Applications Technology Satellite 3"], "cospar": "1967-111A",
+      "country": "United States", "cc": "US", "operator": "NASA", "mission": "Communications and meteorology technology",
+      "status": "Decommissioned", "orbit": "GEO", "launch": "1967-11-05", "retired": "2001",
+      "bands": ["VHF", "C"],
+      "tx": [ { "f": 135.6, "mode": "FM", "desc": "VHF transponder (historical)", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "VHF transponder used by amateurs and field parties into the 1990s; later reports unverified" },
+      "watch": false, "candidate": null,
+      "computer": null, "notes": null,
+      "sources": ["NASA", "Gunter's Space Page"]
+    },
+    {
+      "id": "738", "name": "SYNCOM 3", "alt": [], "cospar": "1964-047A",
+      "country": "United States", "cc": "US", "operator": "NASA / DoD", "mission": "First geostationary communications satellite",
+      "status": "Retired", "orbit": "GEO", "launch": "1964-08-19", "retired": "1969",
+      "bands": ["UHF", "SHF"],
+      "tx": [], "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "no reception reports; likely fully silent" },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["NASA"]
+    },
+    {
+      "id": "5", "name": "VANGUARD 1", "alt": [], "cospar": "1958-002B",
+      "country": "United States", "cc": "US", "operator": "US Navy / NRL", "mission": "Geodesy; oldest object still in orbit",
+      "status": "Inactive", "orbit": "MEO", "launch": "1958-03-17", "retired": "1964",
+      "bands": ["HF", "VHF"],
+      "tx": [ { "f": 108.0, "mode": "CW", "desc": "solar-powered beacon, silent since 1964", "alive": false } ],
+      "rf": { "historical": true, "lastHeard": "1964", "lastBy": null, "lastNote": "last signal May 1964" },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["NASA", "NRL"]
+    },
+    {
+      "id": "10953", "name": "GOES-3", "alt": [], "cospar": "1978-062A",
+      "country": "United States", "cc": "US", "operator": "NOAA / NSF", "mission": "Weather, later South Pole communications relay",
+      "status": "Decommissioned", "orbit": "GRAVEYARD", "launch": "1978-06-16", "retired": "2016-06",
+      "bands": ["S", "UHF"],
+      "tx": [], "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "used as a South Pole relay until 2016, then boosted to a graveyard orbit and switched off" },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["NOAA", "NSF"]
+    },
+    {
+      "id": "12544", "name": "METEOSAT-2", "alt": [], "cospar": "1981-057A",
+      "country": "Europe", "cc": "EU", "operator": "ESA / EUMETSAT", "mission": "Weather imaging",
+      "status": "Graveyard Orbit", "orbit": "GRAVEYARD", "launch": "1981-06-19", "retired": "1991",
+      "bands": ["S", "UHF"],
+      "tx": [], "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["EUMETSAT"]
+    },
+    {
+      "id": "20918", "name": "INMARSAT-2 F1", "alt": [], "cospar": "1990-093A",
+      "country": "International", "cc": "IN", "operator": "Inmarsat", "mission": "Mobile communications",
+      "status": "Retired", "orbit": "GRAVEYARD", "launch": "1990-10-30", "retired": null,
+      "bands": ["L", "C"],
+      "tx": [], "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["Inmarsat", "Gunter's Space Page"]
+    },
+    {
+      "id": "28884", "name": "GALAXY 15", "alt": [], "cospar": "2005-041A",
+      "country": "United States", "cc": "US", "operator": "Intelsat", "mission": "Communications",
+      "status": "Retired", "orbit": "GRAVEYARD", "launch": "2005-10-13", "retired": "2023",
+      "bands": ["C", "L"],
+      "tx": [], "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": "drifted uncontrolled for most of 2010 with transponders on ('Zombiesat'); recovered in December 2010; retired later" },
+      "watch": false, "candidate": null, "computer": null,
+      "notes": "Useful reference case: a live transponder with nobody at the controls.",
+      "sources": ["Intelsat", "press 2010"]
+    },
+    {
+      "id": "6437", "name": "ANIK A2", "alt": [], "cospar": "1973-023A",
+      "country": "Canada", "cc": "CA", "operator": "Telesat Canada", "mission": "Communications",
+      "status": "Non-operational", "orbit": "GRAVEYARD", "launch": "1973-04-20", "retired": "1982",
+      "bands": ["C"], "tx": [],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["Telesat", "Gunter's Space Page"]
+    },
+    {
+      "id": "7252", "name": "WESTAR 1", "alt": [], "cospar": "1974-022A",
+      "country": "United States", "cc": "US", "operator": "Western Union", "mission": "Communications",
+      "status": "Retired", "orbit": "GRAVEYARD", "launch": "1974-04-13", "retired": "1983",
+      "bands": ["C"], "tx": [],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["Gunter's Space Page"]
+    },
+    {
+      "id": "7578", "name": "SYMPHONIE 1", "alt": [], "cospar": "1974-101A",
+      "country": "France / Germany", "cc": "FR", "operator": "CNES / DFVLR", "mission": "Experimental communications",
+      "status": "Decommissioned", "orbit": "GRAVEYARD", "launch": "1974-12-19", "retired": "1983",
+      "bands": ["C"], "tx": [],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["CNES", "Gunter's Space Page"]
+    },
+    {
+      "id": "8916", "name": "PALAPA A1", "alt": [], "cospar": "1976-066A",
+      "country": "Indonesia", "cc": "ID", "operator": "Perumtel", "mission": "Communications",
+      "status": "Retired", "orbit": "GRAVEYARD", "launch": "1976-07-08", "retired": "1985",
+      "bands": ["C"], "tx": [],
+      "rf": { "historical": true, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["Gunter's Space Page"]
+    },
+    {
+      "id": "9880", "name": "MOLNIYA 1-44", "alt": [], "cospar": "1977-021A",
+      "country": "Russia", "cc": "RU", "operator": "USSR Ministry of Communications", "mission": "Communications (Molniya orbit)",
+      "status": "Non-operational", "orbit": "HEO", "launch": "1977-03-24", "retired": null,
+      "bands": ["UHF"], "tx": [],
+      "rf": { "historical": false, "lastHeard": null, "lastBy": null, "lastNote": null },
+      "watch": false, "candidate": null, "computer": null, "notes": null,
+      "sources": ["Gunter's Space Page"]
+    }
+  ]
+}
