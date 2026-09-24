@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Refresh cached orbital data for DeadSat Atlas.
+Refresh cached orbital data for DeadSat Chess.
 
   data/tle.json        elements for every object in data/objects.json
   data/tle_field.json  the CelesTrak 'amateur' group, drawn as background marks
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-UA = "DeadSatAtlas/0.2 (+https://github.com/; static site data refresh)"
+UA = "deadsat-chess/0.2 (+https://github.com/SputniXOps/deadsat-chess; static site data refresh)"
 CELESTRAK = "https://celestrak.org/NORAD/elements/gp.php?{}"
 SATNOGS_TLE = "https://db.satnogs.org/api/tle/?norad_cat_id={}&format=json"
 SATNOGS_OBS = "https://network.satnogs.org/api/observations/?satellite__norad_cat_id={}&status=good&format=json"

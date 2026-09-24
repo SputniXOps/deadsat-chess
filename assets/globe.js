@@ -1,5 +1,5 @@
 /*!
- * DeadSat Atlas — globe renderer.
+ * DeadSat Chess — globe renderer.
  * Plain ES2018, Canvas 2D, no build step. Positions come from SGP4 (assets/orbit.js
  * on top of satellite.js) in real time; this file only draws.
  *

@@ -1,5 +1,5 @@
 /*!
- * DeadSat Atlas — the "one move" dashboard.
+ * DeadSat Chess — the "one move" dashboard.
  * Left: the board. Right: the last recorded EU-01 session (from data/sessions.json)
  * and a live block that is nothing more than SGP4 prediction for the target from
  * the cached elements: az/el/range, the Doppler-corrected downlink, illumination,

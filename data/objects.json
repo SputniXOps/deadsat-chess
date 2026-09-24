@@ -1,5 +1,5 @@
 {
-  "note": "Catalogue metadata for DeadSat Atlas. Names, NORAD and COSPAR identifiers are public record. Status, RF history and 'last report' fields are compiled from public reports and are incomplete; treat them as research notes, not as authoritative status. Orbital elements live in tle.json (fetched from public sources by scripts/fetch_tle.py).",
+  "note": "Catalogue metadata for DeadSat Chess. Names, NORAD and COSPAR identifiers are public record. Status, RF history and 'last report' fields are compiled from public reports and are incomplete; treat them as research notes, not as authoritative status. Orbital elements live in tle.json (fetched from public sources by scripts/fetch_tle.py).",
   "observer": { "id": "EU-01", "grid": "JO70", "lat": 50.5, "lon": 15.0, "alt_m": 300, "note": "position rounded to the grid square" },
   "recentSince": "2020-01-01",
   "objects": [

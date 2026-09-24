@@ -1,4 +1,4 @@
-/* DeadSat Atlas — page styles. Black, thin lines, small type. The board is the only colour. */
+/* DeadSat Chess — page styles. Black, thin lines, small type. The board is the only colour. */
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

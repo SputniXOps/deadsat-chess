@@ -1,4 +1,4 @@
-# DeadSat Atlas
+# DeadSat Chess
 
 A small experiment for exploring inactive and historically interesting
 objects still in Earth orbit.

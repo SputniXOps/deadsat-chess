@@ -1,5 +1,5 @@
 /*!
- * DeadSat Atlas — orbit helpers on top of satellite.js (SGP4).
+ * DeadSat Chess — orbit helpers on top of satellite.js (SGP4).
  * Works in the browser (window.DeadSatOrbit) and in node (module.exports),
  * so the same code that drives the page also generates the recorded sessions.
  */

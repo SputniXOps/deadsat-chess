@@ -1,5 +1,5 @@
 /*!
- * DeadSat Atlas — the board.
+ * DeadSat Chess — the board.
  * A monochrome, pixel-drawn 8x8 in the spirit of late-70s home computer chess.
  * Sprites are original 12x12 bitmaps. Canvas 2D, no dependencies.
  *

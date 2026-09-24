@@ -1,5 +1,5 @@
 /*!
- * DeadSat Atlas — page wiring.
+ * DeadSat Chess — page wiring.
  * Loads the catalogue, the cached elements and the coastlines; builds the globe,
  * the record card, the candidates list and the dashboard. Everything on screen
  * derives from the data files.
