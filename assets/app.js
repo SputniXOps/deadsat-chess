@@ -272,7 +272,7 @@
 
   /* ---------------------------------------------------------------- boot */
   function fetchJson(url, optional) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); })
+    return fetch(url, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); })
       .catch(function (e) { if (optional) return null; throw e; });
   }
   function fail(msg) {

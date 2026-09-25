@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DeadSat Chess</title>
-<meta name="description" content="Looking for a satellite to play chess with. Public orbital data, historical RF notes, a receive-only station.">
+<meta name="description" content="Can a dead satellite play chess? Public orbital data, historical RF notes, a receive-only station.">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4 4l10 10M14 4L4 14' stroke='%23e8e8e8' stroke-width='1.6' fill='none'/%3E%3Cellipse cx='9' cy='9' rx='8' ry='3' fill='none' stroke='%236b6b6b' stroke-width='1' transform='rotate(-24 9 9)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/tokens.css?v=8">
+<link rel="stylesheet" href="assets/app.css?v=8">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
 </header>
 
 <section class="intro" id="top">
-  <h1 class="display">Looking for a satellite to play chess with.</h1>
+  <h1 class="display">Can a dead satellite play chess?</h1>
   <p class="body">Forgotten machines still circle the Earth, and a few of them carried a computer built to take software from the ground. This is a map of them, a receive-only station, and a board with nobody on the other side yet.</p>
 </section>
 
@@ -92,23 +92,20 @@
 
 <section class="block station" id="station">
   <div class="sig data-sm">
-    <span class="dim">EU-01 · JO70 · rx only ·</span>
-    Pluto (TCXO) · SPF5189 LNA + 70 cm SAW · 2×7 el crossed yagi, homebrew · 3 el on 2 m · photo tripod, hand-tracked ·
-    gqrx / gr-satellites / rotctld (dummy) · CelesTrak GP daily · <span class="dim">rule 1: historical freq ≠ current signal · rule 2: current signal ≠ control path</span>
+    Pluto (TCXO) · SPF5189 LNA + 70 cm SAW · 2×7 el crossed yagi, homebrew · 3 el on 2 m · photo tripod, hand-tracked
   </div>
 </section>
 
 <footer class="foot micro">
-  <span class="dim">public orbital data · experimental RF index · receive-only</span>
   <span class="right dim" id="attrib">CelesTrak · SatNOGS DB · Natural Earth</span>
 </footer>
 
-<script src="assets/vendor/satellite.min.js"></script>
-<script src="assets/orbit.js"></script>
-<script src="assets/globe.js"></script>
-<script src="assets/chess.js"></script>
-<script src="assets/link.js"></script>
-<script src="assets/session.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/vendor/satellite.min.js?v=8"></script>
+<script src="assets/orbit.js?v=8"></script>
+<script src="assets/globe.js?v=8"></script>
+<script src="assets/chess.js?v=8"></script>
+<script src="assets/link.js?v=8"></script>
+<script src="assets/session.js?v=8"></script>
+<script src="assets/app.js?v=8"></script>
 </body>
 </html>
