@@ -175,7 +175,7 @@ code { font-family: var(--ds-font-mono); font-size: 0.95em; color: var(--ds-ink-
 .cand[data-open="false"] .candwhy { display: none; }
 
 /* ----------------------------------------------------------------- chess */
-.chessgrid { display: grid; grid-template-columns: minmax(300px, 500px) 1fr; gap: var(--ds-space-16); align-items: start; }
+.chessgrid { display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); gap: var(--ds-space-16); align-items: stretch; }
 .boardwrap {
   background: var(--ds-chess-panel); border: 1px solid var(--ds-chess-line); border-radius: var(--ds-radius-3);
   padding: var(--ds-space-12); display: flex; flex-direction: column; gap: var(--ds-space-8); position: relative; overflow: hidden;
@@ -192,19 +192,24 @@ code { font-family: var(--ds-font-mono); font-size: 0.95em; color: var(--ds-ink-
 
 .term {
   background: var(--ds-surface-000); border: 1px solid var(--ds-line-200); border-radius: var(--ds-radius-3);
-  display: flex; flex-direction: column; min-width: 0;
+  display: flex; flex-direction: column; min-width: 0; min-height: 0; height: 100%;
 }
-.termbar { display: flex; align-items: center; gap: var(--ds-space-12); padding: 6px var(--ds-space-12); border-bottom: 1px solid var(--ds-line-100); color: var(--ds-ink-300); }
-.termbar .tabs { margin-left: auto; display: flex; gap: var(--ds-space-4); }
+.termbar .local { margin-left: var(--ds-space-8); }
+.termbar { display: flex; align-items: center; gap: var(--ds-space-12); padding: 6px var(--ds-space-12); border-bottom: 1px solid var(--ds-line-100); color: var(--ds-ink-300); white-space: nowrap; }
+.termbar #termTitle { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.termbar .local { flex: none; }
+.termbar .tabs { margin-left: auto; display: flex; gap: var(--ds-space-4); overflow-x: auto; flex: 0 1 auto; min-width: 0; }
 .termbar .tabs button { background: transparent; border: 1px solid transparent; color: var(--ds-ink-300); font: inherit; padding: 2px 6px; border-radius: var(--ds-radius-2); cursor: pointer; }
 .termbar .tabs button:hover { color: var(--ds-ink-100); }
 .termbar .tabs button[aria-pressed="true"] { color: var(--ds-ink-100); border-color: var(--ds-line-200); background: var(--ds-surface-200); }
-.termlog { flex: 1; margin: 0; padding: var(--ds-space-8) var(--ds-space-12); overflow: auto; color: var(--ds-ink-200); white-space: pre; max-height: 330px; min-height: 240px; }
+.termlog { flex: 1 1 0; min-height: 0; margin: 0; padding: var(--ds-space-8) var(--ds-space-12); overflow: auto; color: var(--ds-ink-200); white-space: pre; }
+.termlog .hb { color: var(--ds-ink-300); }
+.termlog .warn { color: var(--ds-accent-beacon); }
 .termlog .ops { color: var(--ds-ink-100); }
 .termlog .det { color: var(--ds-accent-beacon); }
 .termlog .rig { color: var(--ds-ink-300); }
 .termlog .hd { color: var(--ds-ink-300); }
-.termlive { margin: 0; padding: var(--ds-space-8) var(--ds-space-12) var(--ds-space-12); border-top: 1px solid var(--ds-line-100); color: var(--ds-ink-200); white-space: pre; overflow: auto; }
+.termlive { flex: none; margin: 0; padding: var(--ds-space-8) var(--ds-space-12) var(--ds-space-12); border-top: 1px solid var(--ds-line-100); color: var(--ds-ink-200); white-space: pre; overflow: auto; }
 .termlive .k { color: var(--ds-ink-300); }
 .termlive .v { color: var(--ds-ink-100); }
 .termlive .w { color: var(--ds-accent-beacon); }
@@ -222,6 +227,8 @@ code { font-family: var(--ds-font-mono); font-size: 0.95em; color: var(--ds-ink-
 .proto b { color: var(--ds-ink-200); font-weight: 500; font-family: var(--ds-font-mono); font-size: 11px; margin-right: 6px; }
 
 /* --------------------------------------------------------------- station */
+.block.station { padding-top: var(--ds-space-24); }
+.sig { color: var(--ds-ink-200); line-height: 18px; max-width: 980px; border-top: 1px solid var(--ds-line-100); padding-top: var(--ds-space-12); }
 .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-24); }
 .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px var(--ds-space-12); margin: 0; }
 .kv dt { color: var(--ds-ink-300); letter-spacing: 0.04em; }
@@ -267,8 +274,8 @@ code { font-family: var(--ds-font-mono); font-size: 0.95em; color: var(--ds-ink-
   .cand .comp, .cand .rfnow, .cand .lastc, .cand .act { display: none; }
   .candwhy { padding-left: 0; }
   .chessgrid { grid-template-columns: 1fr; }
-  .term { min-height: 0; }
-  .termlog { max-height: 260px; min-height: 160px; }
+  .term { height: 440px; }
+  .termbar .local { display: none; }
   .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cols { grid-template-columns: 1fr; }
   .entries li { grid-template-columns: 1fr; gap: 2px; }

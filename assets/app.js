@@ -297,7 +297,7 @@
     apply();
 
     var target = data.objects.filter(function (o) { return String(int0(o.id)) === String(pstate.target || '') || (!pstate.target && o.candidate && o.candidate.rank === 1); })[0];
-    if (target) session = window.DeadSatSession.create({ target: target, observer: observer, sessions: sessions.sessions, phase: pstate.phase || 'listening' });
+    if (target && target.satrec) session = window.DeadSatSession.create({ target: target, observer: observer, sessions: sessions.sessions, state: pstate, elementsCached: data.objects.filter(function (o) { return o.satrec; }).length });
 
     document.getElementById('zoomIn').addEventListener('click', function () { globe.zoomBy(1.25); });
     document.getElementById('zoomOut').addEventListener('click', function () { globe.zoomBy(0.8); });

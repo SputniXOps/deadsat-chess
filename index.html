@@ -66,7 +66,8 @@
     </div>
     <div class="term" id="term">
       <div class="termbar data-sm">
-        <span id="termTitle">session</span>
+        <span id="termTitle">ops</span>
+        <span class="local dim" id="termLocal"></span>
         <span class="tabs" id="sessTabs"></span>
       </div>
       <pre class="termlog data-sm" id="termlog"></pre>
@@ -89,38 +90,11 @@
   <div class="cands" id="cands"></div>
 </section>
 
-<section class="block" id="station">
-  <div class="blockhead">
-    <h2 class="display-sm">Station</h2>
-    <p class="body-sm dim">EU-01 · one receive-only station in Central Europe, locator JO70. Nothing here transmits.</p>
-  </div>
-  <div class="cols">
-    <dl class="kv data-sm">
-      <dt>SDR</dt><dd>ADALM-Pluto, TCXO mod (0.5 ppm)</dd>
-      <dt>REFERENCE</dt><dd>offset checked against a local beacon before each session</dd>
-      <dt>LNA</dt><dd>SPF5189 board at the antenna, bias-tee fed</dd>
-      <dt>FILTER</dt><dd>70 cm SAW band-pass after the LNA</dd>
-      <dt>ANTENNA 70</dt><dd>crossed yagi, 2 × 7 el, homebrew, phasing harness (RHCP)</dd>
-      <dt>ANTENNA 2</dt><dd>3 el yagi, handheld, for the 145 MHz birds</dd>
-      <dt>COAX</dt><dd>4 m RG-58 to the case, loss measured, not estimated</dd>
-      <dt>MOUNT</dt><dd>photo tripod, ball head, hand-tracked</dd>
-      <dt>POWER</dt><dd>12 V LiFePO4, 20 Ah, in the case</dd>
-    </dl>
-    <dl class="kv data-sm">
-      <dt>HOST</dt><dd>old ThinkPad, Debian, in the field</dd>
-      <dt>UNATTENDED</dt><dd>Raspberry Pi 4 at home, same chain, satnogs-client</dd>
-      <dt>RX</dt><dd>gqrx (rigctl on 7356)</dd>
-      <dt>DECODE</dt><dd>gr-satellites, KISS out</dd>
-      <dt>TRACK</dt><dd>rotctld, dummy model — I am the rotator</dd>
-      <dt>ELEMENTS</dt><dd>CelesTrak GP, refreshed daily</dd>
-      <dt>CROSS-CHECK</dt><dd>SatNOGS DB / Network</dd>
-    </dl>
-    <dl class="kv data-sm">
-      <dt>RULE 1</dt><dd>historical frequency ≠ current signal</dd>
-      <dt>RULE 2</dt><dd>current signal ≠ control path</dd>
-      <dt>RULE 3</dt><dd>write rules 1 and 2 everywhere</dd>
-      <dt>UPLINK</dt><dd>none. Not until an operator says yes.</dd>
-    </dl>
+<section class="block station" id="station">
+  <div class="sig data-sm">
+    <span class="dim">EU-01 · JO70 · rx only ·</span>
+    Pluto (TCXO) · SPF5189 LNA + 70 cm SAW · 2×7 el crossed yagi, homebrew · 3 el on 2 m · photo tripod, hand-tracked ·
+    gqrx / gr-satellites / rotctld (dummy) · CelesTrak GP daily · <span class="dim">rule 1: historical freq ≠ current signal · rule 2: current signal ≠ control path</span>
   </div>
 </section>
 
@@ -133,6 +107,7 @@
 <script src="assets/orbit.js"></script>
 <script src="assets/globe.js"></script>
 <script src="assets/chess.js"></script>
+<script src="assets/link.js"></script>
 <script src="assets/session.js"></script>
 <script src="assets/app.js"></script>
 </body>
